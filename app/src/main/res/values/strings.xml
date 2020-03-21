@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">coupon</string>
+    <string name="app_name">Coupon</string>
+    <string name="launchButtonText">Launch</string>
 </resources>

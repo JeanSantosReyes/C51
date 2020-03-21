@@ -21,10 +21,6 @@ class CouponRepository private constructor() {
         DaggerNetworkComponent.builder().build().inject(this)
     }
 
-  //  companion object {
-  //      lateinit var offerList:ArrayList<Offer>
-  //  }
-
     // Inject network module
     @Inject
     lateinit var api: CouponApi
