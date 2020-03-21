@@ -9,7 +9,6 @@ import kotlinx.coroutines.launch
 
 class SplashViewModel : ViewModel() {
     // TODO: Implement the ViewModel
-  //  var offerList: MutableLiveData<List<Offer>> = MutableLiveData()
      var appReady:MutableLiveData<Boolean> = MutableLiveData()
 
      fun initializeRepository() {
