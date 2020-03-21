@@ -2,7 +2,7 @@ package com.check.coupon
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.check.coupon.ui.main.MainFragment
+import com.check.coupon.page.MainFragment
 
 class MainActivity : AppCompatActivity() {
 

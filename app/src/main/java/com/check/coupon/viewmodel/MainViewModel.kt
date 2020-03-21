@@ -1,4 +1,4 @@
-package com.check.coupon.ui.main
+package com.check.coupon.viewmodel
 
 import androidx.lifecycle.ViewModel
 
