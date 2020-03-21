@@ -1,6 +1,7 @@
 package com.check.coupon.adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
@@ -38,7 +39,8 @@ class OfferViewAdapter(private val mContext: Context, private val mData: List<Of
             .into(holder.offerImage)
 
         holder.offerTitleText.text = offerTitle
-        holder.offerCashBackText.text = offerCashBack.toString()
+        holder.offerCashBackText.text = "$"+offerCashBack.toString()
+        holder.offerCashBackText.setTextColor(Color.RED)
     }
 
     interface ClickListener {
