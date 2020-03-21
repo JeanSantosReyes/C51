@@ -5,15 +5,25 @@ import com.check.coupon.model.Offer
 import com.check.coupon.service.CouponApi
 import javax.inject.Inject
 
-class CouponRepository {
+class CouponRepository private constructor() {
+
+    companion object {
+        var single =  CouponRepository()
+        lateinit var offerList:ArrayList<Offer>
+        fun getInstance(): CouponRepository {
+            if (single == null)
+                single = CouponRepository()
+            return single
+        }
+    }
 
     init {
         DaggerNetworkComponent.builder().build().inject(this)
     }
 
-    companion object {
-        lateinit var offerList:ArrayList<Offer>
-    }
+  //  companion object {
+  //      lateinit var offerList:ArrayList<Offer>
+  //  }
 
     // Inject network module
     @Inject
@@ -31,5 +41,4 @@ class CouponRepository {
         offerList.clear()
         offerList = api.getCoupon().offers as ArrayList<Offer>
     }
-
 }
