@@ -6,20 +6,26 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.check.coupon.model.Offer
 import com.check.coupon.repository.CouponRepository
+import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
     // TODO: Implement the ViewModel
-    var offerList: MutableLiveData<List<Offer>> = MutableLiveData()
+  //  var offerList: MutableLiveData<List<Offer>> = MutableLiveData()
+     var appReady:MutableLiveData<Boolean> = MutableLiveData()
 
      fun initializeRepository() {
-        GlobalScope.launch {
+        GlobalScope.launch(Main) {
             CouponRepository.single.initialize()
         }.invokeOnCompletion {
-            var a = CouponRepository.offerList
-            Log.d(a.size.toString(),"size of the array")
+            appReady.value = true
         }
     }
+
+    fun refreshOfferList() {
+
+    }
+
 
 }
