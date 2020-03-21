@@ -12,12 +12,13 @@ import javax.inject.Inject
 class CouponRepository private constructor() {
 
     companion object {
-        var single =  CouponRepository()
+        var couponrepository =  CouponRepository()
         var offerList:ArrayList<Offer> = ArrayList()
+
         fun getInstance(): CouponRepository {
-            if (single == null)
-                single = CouponRepository()
-            return single
+            if (couponrepository == null)
+                couponrepository = CouponRepository()
+            return couponrepository
         }
     }
 
@@ -32,19 +33,23 @@ class CouponRepository private constructor() {
     suspend fun initialize() {
         try {
             offerList = api.getCoupon().offers as ArrayList<Offer>
-            if(offerList.isNotEmpty())
-                Paper.book().write(Constants.OFFER_CACHE,offerList)
         } catch (e:Exception) {
             Log.d("Api Error","Error in remote source")
         }
 
-
+        if(offerList.isNotEmpty())
+            Paper.book().write(Constants.OFFER_CACHE,offerList)
     }
 
     fun getOffers():ArrayList<Offer> {
         // read data from the cache
         if(offerList.isEmpty()) {
-            return Paper.book().read(Constants.OFFER_CACHE) as ArrayList<Offer>
+            return if(Paper.book().contains(Constants.OFFER_CACHE)) {
+                val result = Paper.book().read(Constants.OFFER_CACHE) as ArrayList<Offer>
+                result
+            } else {
+                ArrayList()
+            }
         }
         return offerList
     }
