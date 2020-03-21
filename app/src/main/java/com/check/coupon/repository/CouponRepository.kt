@@ -54,8 +54,4 @@ class CouponRepository private constructor() {
         return offerList
     }
 
-    suspend fun refreshOfferList() {
-        offerList.clear()
-        offerList = api.getCoupon().offers as ArrayList<Offer>
-    }
 }
