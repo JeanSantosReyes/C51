@@ -29,6 +29,7 @@ class HubFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         offers = ArrayList()
+        viewModel.getOfferList()
         return inflater.inflate(R.layout.hub_fragment, container, false)
     }
 
@@ -40,17 +41,15 @@ class HubFragment : Fragment() {
             adapter = OfferViewAdapter(context, offers)
         }
 
-        offerItemList.layoutManager = androidx.recyclerview.widget.GridLayoutManager(context, 1)
-
-        viewModel.getOfferList()
+        offerItemList.layoutManager = androidx.recyclerview.widget.GridLayoutManager(context, 2)
 
         viewModel.offerList.observe(viewLifecycleOwner, Observer {
             it.forEach { it ->
                 offers.add(it)
             }
-          //  if(it.isNotEmpty()) {
+            if(it.isNotEmpty()) {
                 offerItemList.adapter?.notifyDataSetChanged()
-          //  }
+            }
         })
     }
 
