@@ -36,7 +36,7 @@ class SplashFragment : Fragment() {
 
         viewModel.appReady.observe(viewLifecycleOwner, Observer {
             if(it) {
-                Navigation.findNavController(this.view!!)
+                Navigation.findNavController(this.requireView())
                     .navigate(R.id.action_splashFragment_to_hubFragment)
             }
         })
