@@ -1,4 +1,4 @@
-package com.check.coupon.ui.main
+package com.check.coupon.page
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.check.coupon.R
+import com.check.coupon.viewmodel.MainViewModel
+import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment() {
 
@@ -25,6 +27,11 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
+        start.setOnClickListener{
+            viewModel.initializeRepository()
+        }
     }
+
+
 
 }
