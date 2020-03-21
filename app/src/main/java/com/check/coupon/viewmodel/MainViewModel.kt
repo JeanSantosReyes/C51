@@ -23,4 +23,9 @@ class MainViewModel : ViewModel() {
         }
     }
 
+    fun refreshOfferList() {
+
+    }
+
+
 }

@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.check.coupon.R
 import com.check.coupon.viewmodel.MainViewModel
+import kotlinx.android.synthetic.main.hub_fragment.*
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment() {
@@ -43,7 +44,4 @@ class MainFragment : Fragment() {
             }
         })
     }
-
-
-
 }

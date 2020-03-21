@@ -41,6 +41,7 @@ class OfferViewAdapter(private val mContext: Context, private val mData: List<Of
         holder.offerTitleText.text = offerTitle
         holder.offerCashBackText.text = "$"+offerCashBack.toString()
         holder.offerCashBackText.setTextColor(Color.RED)
+
     }
 
     interface ClickListener {
