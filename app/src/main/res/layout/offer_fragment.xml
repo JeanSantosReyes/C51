@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@android:color/white"
     tools:context=".page.OfferFragment">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@android:color/white"
     tools:context=".page.OfferFragment">
-
     <ImageView
         android:id="@+id/offerImageView"
         android:layout_width="324dp"
@@ -24,7 +25,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/offerTitleDetailText"
         android:layout_width="wrap_content"
@@ -37,7 +37,6 @@
         app:layout_constraintBottom_toTopOf="@+id/offerCashBackDetailText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/offerImageView" />
-
     <TextView
         android:id="@+id/offerCashBackDetailText"
         android:layout_width="wrap_content"
@@ -50,7 +49,6 @@
         app:layout_constraintBottom_toTopOf="@+id/offerIdDetailText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/offerTitleDetailText" />
-
     <TextView
         android:id="@+id/offerIdDetailText"
         android:layout_width="wrap_content"
@@ -62,7 +60,6 @@
         app:layout_constraintStart_toStartOf="@+id/offerCashBackDetailText"
         app:layout_constraintTop_toBottomOf="@+id/offerCashBackDetailText">
     </TextView>
-
     <Button
         android:id="@+id/offerShareButton"
         android:layout_width="138dp"

@@ -8,7 +8,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.runners.MockitoJUnitRunner
 
-
 @RunWith(MockitoJUnitRunner::class)
 class CouponSerializationTests {
 
@@ -26,8 +25,7 @@ class CouponSerializationTests {
           Assert.assertTrue(isValidJsonSerialization(jsonData))
     }
 
-
-    fun isValidJsonSerialization(Json: String?): Boolean {
+    private fun isValidJsonSerialization(Json: String?): Boolean {
         val gson = Gson()
         return try {
             gson.fromJson(Json, Coupon::class.java)
@@ -37,5 +35,4 @@ class CouponSerializationTests {
             false
         }
     }
-
 }

@@ -8,7 +8,6 @@ import android.widget.TextView
 import com.check.coupon.R
 import com.check.coupon.model.Offer
 import com.squareup.picasso.Picasso
-import org.w3c.dom.Text
 
 
 /**
@@ -80,7 +79,6 @@ class OfferViewAdapter(private val mContext: Context, private val mData: List<Of
 
         }
     }
-
 
     class OfferViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         internal var offerImage:ImageView = itemView.findViewById(R.id.offerImage) as ImageView

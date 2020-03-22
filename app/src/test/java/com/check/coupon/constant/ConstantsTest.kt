@@ -17,5 +17,4 @@ class ConstantsTest {
         Assert.assertTrue(Constants.OFFER_CACHE == "offer_db")
     }
 
-
 }
