@@ -16,20 +16,20 @@ import com.squareup.picasso.Picasso
  *
  */
 class OfferViewAdapter(private val mContext: Context, private val mData: List<Offer>) :
-    androidx.recyclerview.widget.RecyclerView.Adapter<OfferViewAdapter.MyViewHolder>() {
+    androidx.recyclerview.widget.RecyclerView.Adapter<OfferViewAdapter.OfferViewHolder>() {
 
     override fun getItemCount(): Int {
         return mData.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfferViewHolder {
         val view: View
         val mInflater = LayoutInflater.from(mContext)
         view = mInflater.inflate(R.layout.offerview_item, parent, false)
-        return MyViewHolder(view)
+        return OfferViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: OfferViewHolder, position: Int) {
         val offerUrl = mData[position].imageUrl
         val offerTitle = mData[position].name
         val offerCashBack = mData[position].cashBack
@@ -46,7 +46,7 @@ class OfferViewAdapter(private val mContext: Context, private val mData: List<Of
         holder.offerCashBackText.setTextColor(Color.RED)
     }
 
-    class MyViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
+    class OfferViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         internal var offerImage:ImageView = itemView.findViewById(R.id.offerImage) as ImageView
         internal var offerTitleText:TextView = itemView.findViewById(R.id.offerTitleText) as TextView
         internal var offerCashBackText:TextView = itemView.findViewById(R.id.offerCashBackText) as TextView
