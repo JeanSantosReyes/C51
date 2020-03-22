@@ -1,5 +1,7 @@
 package com.check.coupon.page
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -75,6 +77,37 @@ class HubFragment : Fragment() {
         // check the internet or data of the device and provide a toast warning message to the user
         if(!viewModel.isNetworkAvailable(requireContext())) {
             Toast.makeText(requireContext(),"Internet not available,Loading from Cache",Toast.LENGTH_LONG).show()
+        }
+
+        sortButton.setOnClickListener{
+            //Toast.makeText(context,"sort",Toast.LENGTH_LONG).show()
+            val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
+            builder.setTitle("Choose your sort preference")
+            val sortTypes =
+                arrayOf("Sort by Name", "Sort by Cash back $ (LOW to HIGH)","Sort by Cash back $ (HIGH to LOW)")
+            builder.setItems(sortTypes
+            ) { _, which ->
+                when (which) {
+                    0 -> {
+                      offers.sortBy {
+                          it.name
+                      }
+                    }
+                    1 -> {
+                        offers.sortBy {
+                            it.cashBack
+                        }
+                    }
+                    2 -> {
+                        offers.sortByDescending {
+                            it.cashBack
+                        }
+                    }
+                }
+                offerItemList.adapter?.notifyDataSetChanged()
+            }
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
         }
     }
 }
