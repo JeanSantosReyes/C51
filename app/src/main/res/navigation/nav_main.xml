@@ -3,20 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/splashFragment">
 
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.check.coupon.page.MainFragment"
-        android:label="main_fragment"
-        tools:layout="@layout/main_fragment" >
-        <action
-            android:id="@+id/action_mainFragment_to_hubFragment"
-            app:destination="@id/hubFragment" />
-    </fragment>
     <fragment
         android:id="@+id/hubFragment"
         android:name="com.check.coupon.page.HubFragment"
         android:label="hub_fragment"
         tools:layout="@layout/hub_fragment" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.check.coupon.page.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_hubFragment"
+            app:destination="@id/hubFragment" />
+    </fragment>
 </navigation>

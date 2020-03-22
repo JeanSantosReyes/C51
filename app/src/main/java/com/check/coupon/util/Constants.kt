@@ -2,6 +2,7 @@ package com.check.coupon.util
 
 class Constants {
     companion object {
-        val BASE_URL = "https://www.spkdroid.com"
+        const val BASE_URL = "https://www.spkdroid.com"
+        const val OFFER_CACHE = "offer_db";
     }
 }

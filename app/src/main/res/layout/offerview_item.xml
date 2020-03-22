@@ -42,6 +42,7 @@
             android:textColor="#000000"
             android:text="$2"
             android:textSize="14sp"
+            android:textStyle="bold"
             android:layout_gravity="center"
             android:textAlignment="center"
             />

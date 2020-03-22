@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Coupon</string>
     <string name="launchButtonText">Launch</string>
+    <string name="empty_data">Data not available, Please switch on the internet and restart the application</string>
 </resources>
