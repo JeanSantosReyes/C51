@@ -45,6 +45,8 @@ The coupon application use a special restful API to fetch the cash back coupon f
 
 ## Build Process
 
+[![Build Status](https://www.travis-ci.org/spkdroid/C51.svg?branch=master)](https://www.travis-ci.org/github/spkdroid/C51)
+
 **Android Studio 3.6 required**
 
 * Clone or download the repo
