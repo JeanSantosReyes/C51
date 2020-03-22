@@ -2,4 +2,7 @@
     <string name="app_name">Coupon</string>
     <string name="launchButtonText">Launch</string>
     <string name="empty_data">Data not available, Please switch on the internet and restart the application</string>
+    <string name="hub_title_text">Cashback Offers</string>
+    <string name="offer_image_description">OfferImage</string>
+    <string name="share">Share</string>
 </resources>

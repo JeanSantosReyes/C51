@@ -2,14 +2,13 @@ package com.check.coupon.adapter
 
 import android.content.Context
 import android.graphics.Color
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
 import com.check.coupon.R
 import com.check.coupon.model.Offer
 import com.squareup.picasso.Picasso
+import org.w3c.dom.Text
 
 
 /**
@@ -36,6 +35,7 @@ class OfferViewAdapter(private val mContext: Context, private val mData: List<Of
         val offerUrl = mData[position].imageUrl
         val offerTitle = mData[position].name
         val offerCashBack = mData[position].cashBack
+        val offerId = mData[position].offerId
 
         Picasso.get()
             .load(offerUrl)
@@ -46,11 +46,47 @@ class OfferViewAdapter(private val mContext: Context, private val mData: List<Of
         holder.offerTitleText.text = offerTitle
         holder.offerCashBackText.text = "$$offerCashBack"
         holder.offerCashBackText.setTextColor(Color.RED)
+        holder.offerIdText.text = offerId
     }
+
+    interface ClickListener {
+        fun onClick(view: View, position: Int)
+    }
+
+    internal class RecyclerTouchListener(
+        context: Context,
+        private val clicker: ClickListener?
+    ) : androidx.recyclerview.widget.RecyclerView.OnItemTouchListener {
+        private val gestureDetector: GestureDetector =
+            GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
+                override fun onSingleTapUp(e: MotionEvent): Boolean {
+                    return true
+                }
+            })
+
+        override fun onInterceptTouchEvent(rv: androidx.recyclerview.widget.RecyclerView, e: MotionEvent): Boolean {
+            val child = rv.findChildViewUnder(e.x, e.y)
+            if (child != null && clicker != null && gestureDetector.onTouchEvent(e)) {
+                clicker.onClick(child, rv.getChildAdapterPosition(child))
+            }
+            return false
+        }
+
+        override fun onTouchEvent(rv: androidx.recyclerview.widget.RecyclerView, e: MotionEvent) {
+
+        }
+
+        override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {
+
+        }
+    }
+
 
     class OfferViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         internal var offerImage:ImageView = itemView.findViewById(R.id.offerImage) as ImageView
         internal var offerTitleText:TextView = itemView.findViewById(R.id.offerTitleText) as TextView
         internal var offerCashBackText:TextView = itemView.findViewById(R.id.offerCashBackText) as TextView
+        internal var offerIdText:TextView = itemView.findViewById(R.id.offerId) as TextView
+
     }
 }

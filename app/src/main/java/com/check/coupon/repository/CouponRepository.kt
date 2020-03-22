@@ -17,13 +17,17 @@ class CouponRepository private constructor() {
     companion object {
         var coupon =  CouponRepository()
         var offerList:ArrayList<Offer> = ArrayList()
-
+        
         fun getInstance(): CouponRepository {
             if (coupon == null)
                 coupon = CouponRepository()
             return coupon
         }
     }
+
+
+
+
 
     init {
         DaggerNetworkComponent.builder().build().inject(this)

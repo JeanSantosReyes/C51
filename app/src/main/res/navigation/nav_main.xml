@@ -9,7 +9,11 @@
         android:id="@+id/hubFragment"
         android:name="com.check.coupon.page.HubFragment"
         android:label="hub_fragment"
-        tools:layout="@layout/hub_fragment" />
+        tools:layout="@layout/hub_fragment" >
+        <action
+            android:id="@+id/action_hubFragment_to_offerFragment"
+            app:destination="@id/offerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.check.coupon.page.SplashFragment"
@@ -18,4 +22,9 @@
             android:id="@+id/action_splashFragment_to_hubFragment"
             app:destination="@id/hubFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/offerFragment"
+        android:name="com.check.coupon.page.OfferFragment"
+        android:label="offer_fragment"
+        tools:layout="@layout/offer_fragment" />
 </navigation>
