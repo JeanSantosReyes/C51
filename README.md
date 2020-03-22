@@ -8,8 +8,57 @@
 
 <h4 align="center">View all the latest cash back offers on the Coupon Application</h4>
 
-<p float="left">
+<p align="center">
   <img src="https://www.spkdroid.com/c51/1.png" height=500 width=240/>
   <img src="https://www.spkdroid.com/c51/2.png" height=500 width=240/> 
 </p>
 
+## Features
+
+Coupon is a simple two page application that would read the latest cash back offers from the server.
+
+## Technology stack
+
+Technology stack used in Coupon
+
+* [MVVM](https://developer.android.com/topic/libraries/architecture/viewmodel)
+  - Design pattern used on the application
+* [Navigation Architecture Component](https://developer.android.com/topic/libraries/architecture/navigation/)
+  - Jetpack navigation
+* [Dagger2](https://google.github.io/dagger/)
+  - Dependency injection framework
+* [Retrofit](https://square.github.io/retrofit/)
+  - Http client
+* [Picasso](https://github.com/square/picasso)
+  - Image downloading and caching
+* [Paper](https://github.com/pilgr/Paper)
+  - Offline Storage
+  
+## Restful API
+
+The coupon application use a special restful API to fetch the cash back coupon from the server.
+
+| New Feed        | API Call
+| ------------- |:-------------:
+| Cash back information      | GET https://www.spkdroid.com/c51/coupons.php
+ 
+
+## Build Process
+
+**Android Studio 3.6 required**
+
+* Clone or download the repo
+* Import project and build
+
+## Getting Started
+
+The apk file can be downloaded from the following link <br>
+
+<strong>
+<a href="http://www.spkdroid.com/C51/app-debug.apk">Download Now!!</a>
+</strong>
+
+
+## Authors
+
+* **Ramkumar Velmurugan** - <a href="http://www.spkdroid.com/CV/">Portfolio</a>
