@@ -55,7 +55,7 @@ The coupon application use a special restful API to fetch the cash back coupon f
 The apk file can be downloaded from the following link <br>
 
 <strong>
-<a href="http://www.spkdroid.com/C51/app-debug.apk">Download Now!!</a>
+<a href="https://www.spkdroid.com/c51/app-debug.apk">Download Now!!</a>
 </strong>
 
 
