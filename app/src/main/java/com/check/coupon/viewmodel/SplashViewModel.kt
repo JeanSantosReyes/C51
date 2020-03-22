@@ -8,12 +8,12 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class SplashViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+
      var appReady:MutableLiveData<Boolean> = MutableLiveData()
 
      fun initializeRepository() {
         GlobalScope.launch(Main) {
-            CouponRepository.couponrepository.initialize()
+            CouponRepository.coupon.initialize()
         }.invokeOnCompletion {
             appReady.value = true
         }

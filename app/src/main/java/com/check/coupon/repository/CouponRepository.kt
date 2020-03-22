@@ -12,13 +12,13 @@ import javax.inject.Inject
 class CouponRepository private constructor() {
 
     companion object {
-        var couponrepository =  CouponRepository()
+        var coupon =  CouponRepository()
         var offerList:ArrayList<Offer> = ArrayList()
 
         fun getInstance(): CouponRepository {
-            if (couponrepository == null)
-                couponrepository = CouponRepository()
-            return couponrepository
+            if (coupon == null)
+                coupon = CouponRepository()
+            return coupon
         }
     }
 

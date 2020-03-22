@@ -31,6 +31,7 @@ class OfferViewAdapter(private val mContext: Context, private val mData: List<Of
         val offerUrl = mData[position].imageUrl
         val offerTitle = mData[position].name
         val offerCashBack = mData[position].cashBack
+        val offerCode = mData[position].offerId
 
         Picasso.get()
             .load(offerUrl)
@@ -39,41 +40,8 @@ class OfferViewAdapter(private val mContext: Context, private val mData: List<Of
             .into(holder.offerImage)
 
         holder.offerTitleText.text = offerTitle
-        holder.offerCashBackText.text = "$"+offerCashBack.toString()
+        holder.offerCashBackText.text = "$$offerCashBack"
         holder.offerCashBackText.setTextColor(Color.RED)
-
-    }
-
-    interface ClickListener {
-        fun onClick(view: View, position: Int)
-    }
-
-    internal class RecyclerTouchListener(
-        context: Context,
-        private val clicker: ClickListener?
-    ) : androidx.recyclerview.widget.RecyclerView.OnItemTouchListener {
-        private val gestureDetector: GestureDetector =
-            GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
-                override fun onSingleTapUp(e: MotionEvent): Boolean {
-                    return true
-                }
-            })
-
-        override fun onInterceptTouchEvent(rv: androidx.recyclerview.widget.RecyclerView, e: MotionEvent): Boolean {
-            val child = rv.findChildViewUnder(e.x, e.y)
-            if (child != null && clicker != null && gestureDetector.onTouchEvent(e)) {
-                clicker.onClick(child, rv.getChildAdapterPosition(child))
-            }
-            return false
-        }
-
-        override fun onTouchEvent(rv: androidx.recyclerview.widget.RecyclerView, e: MotionEvent) {
-
-        }
-
-        override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {
-
-        }
     }
 
     class MyViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {

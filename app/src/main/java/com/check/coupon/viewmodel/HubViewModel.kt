@@ -9,11 +9,11 @@ import com.check.coupon.repository.CouponRepository
 
 
 class HubViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+
     var offerList: MutableLiveData<List<Offer>> = MutableLiveData()
 
     fun getOfferList() {
-        offerList.value = CouponRepository.couponrepository.getOffers()
+        offerList.value = CouponRepository.coupon.getOffers()
     }
 
     fun isNetworkAvailable(context: Context): Boolean {
