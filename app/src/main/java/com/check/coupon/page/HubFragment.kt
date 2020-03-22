@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.check.coupon.R
 import com.check.coupon.adapter.OfferViewAdapter
@@ -34,7 +35,7 @@ class HubFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(HubViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(HubViewModel::class.java)
         // TODO: Use the ViewModel
         offerItemList.apply {
             adapter = OfferViewAdapter(context, offers)
