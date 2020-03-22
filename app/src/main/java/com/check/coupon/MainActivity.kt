@@ -3,6 +3,7 @@ package com.check.coupon
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import io.paperdb.Paper
 
 
@@ -23,4 +24,10 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    override fun onBackPressed() {
+      //  val navigationController = navHost.findNavController()
+      //  if ((navigationController.currentDestination?.id != R.id.splashFragment)) {
+      //      super.onBackPressed()
+      //  }
+    }
 }
