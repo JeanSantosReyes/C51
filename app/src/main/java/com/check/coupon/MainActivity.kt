@@ -3,7 +3,6 @@ package com.check.coupon
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import io.paperdb.Paper
 
 

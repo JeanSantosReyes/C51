@@ -8,8 +8,12 @@ import com.check.coupon.util.Constants
 import io.paperdb.Paper
 import javax.inject.Inject
 
-class CouponRepository private constructor() {
+/**
+ *   CouponRepository - Reads the data from the internet or local cache based on the context
+ */
 
+class CouponRepository private constructor() {
+    // Singleton implementation
     companion object {
         var coupon =  CouponRepository()
         var offerList:ArrayList<Offer> = ArrayList()
@@ -35,7 +39,7 @@ class CouponRepository private constructor() {
         } catch (e:Exception) {
             Log.d("Api Error","Error in remote source")
         }
-
+        // store the data into the paper db
         if(offerList.isNotEmpty())
             Paper.book().write(Constants.OFFER_CACHE,offerList)
     }
@@ -50,6 +54,7 @@ class CouponRepository private constructor() {
                 ArrayList()
             }
         }
+        // return the data from the internet
         return offerList
     }
 

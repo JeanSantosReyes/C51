@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+
 class SplashViewModel : ViewModel() {
 
      var appReady:MutableLiveData<Boolean> = MutableLiveData()

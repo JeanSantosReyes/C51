@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.check.coupon.R
 import com.check.coupon.adapter.OfferViewAdapter
 import com.check.coupon.model.Offer
@@ -16,12 +15,13 @@ import com.check.coupon.viewmodel.HubViewModel
 import kotlinx.android.synthetic.main.hub_fragment.*
 
 
+
 class HubFragment : Fragment() {
+
 
     companion object {
         fun newInstance() = HubFragment()
     }
-
     private lateinit var viewModel: HubViewModel
     private lateinit var offers: ArrayList<Offer>
 
@@ -37,6 +37,8 @@ class HubFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(HubViewModel::class.java)
         // TODO: Use the ViewModel
+
+        // RecyclerView declaration
         offerItemList.apply {
             adapter = OfferViewAdapter(context, offers)
         }
@@ -44,7 +46,7 @@ class HubFragment : Fragment() {
         offerItemList.layoutManager = androidx.recyclerview.widget.GridLayoutManager(context, 2)
         offerItemList.setHasFixedSize(true)
 
-
+        // observe the offer list from the view model
         viewModel.offerList.observe(viewLifecycleOwner, Observer {
             it.forEach { it ->
                 offers.add(it)
@@ -57,6 +59,8 @@ class HubFragment : Fragment() {
             }
         })
 
+
+        // check the internet or data of the device and provide a toast warning message to the user
         if(!viewModel.isNetworkAvailable(requireContext())) {
             Toast.makeText(requireContext(),"Internet not available,Loading from Cache",Toast.LENGTH_LONG).show()
         }

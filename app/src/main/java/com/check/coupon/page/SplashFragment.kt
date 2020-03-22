@@ -28,12 +28,14 @@ class SplashFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(SplashViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        // Trigger the initalize function on the repository
         LoginTextButton.setOnClickListener{
             viewModel.initializeRepository()
             loginProgressBar.visibility = View.VISIBLE
         }
 
+        // observe the appReady variable on the ViewModel
         viewModel.appReady.observe(viewLifecycleOwner, Observer {
             if(it) {
                 Navigation.findNavController(this.requireView())

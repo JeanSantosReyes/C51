@@ -49,5 +49,4 @@ public class Offer {
     public void setCashBack(Double cashBack) {
         this.cashBack = cashBack;
     }
-
 }

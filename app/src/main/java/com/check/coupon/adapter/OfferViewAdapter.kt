@@ -11,7 +11,10 @@ import com.check.coupon.R
 import com.check.coupon.model.Offer
 import com.squareup.picasso.Picasso
 
+
 /**
+ *
+ *
  *   OfferView Adapter is the declaration of the recyclerview list item
  *
  */
@@ -33,7 +36,6 @@ class OfferViewAdapter(private val mContext: Context, private val mData: List<Of
         val offerUrl = mData[position].imageUrl
         val offerTitle = mData[position].name
         val offerCashBack = mData[position].cashBack
-        val offerCode = mData[position].offerId
 
         Picasso.get()
             .load(offerUrl)
