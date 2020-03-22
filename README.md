@@ -22,7 +22,7 @@ Coupon is a simple two page application that would read the latest cash back off
 Technology stack used in Coupon
 
 * [MVVM](https://developer.android.com/topic/libraries/architecture/viewmodel)
-  - Design pattern used on the application
+  - Design pattern
 * [Navigation Architecture Component](https://developer.android.com/topic/libraries/architecture/navigation/)
   - Jetpack navigation
 * [Dagger2](https://google.github.io/dagger/)
