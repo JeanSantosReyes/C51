@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.DividerItemDecoration
 import com.check.coupon.R
 import com.check.coupon.adapter.OfferViewAdapter
 import com.check.coupon.model.Offer

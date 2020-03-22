@@ -2,9 +2,7 @@ package com.check.coupon.page
 
 import android.content.Context
 import androidx.fragment.app.testing.launchFragmentInContainer
-import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -6,7 +6,6 @@ import com.check.coupon.model.Offer
 import com.check.coupon.service.CouponApi
 import com.check.coupon.util.Constants
 import io.paperdb.Paper
-import java.lang.Exception
 import javax.inject.Inject
 
 class CouponRepository private constructor() {

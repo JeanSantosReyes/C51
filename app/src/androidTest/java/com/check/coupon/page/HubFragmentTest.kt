@@ -4,14 +4,11 @@ import android.content.Context
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.action.ViewActions.scrollTo
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.check.coupon.R
-import com.check.coupon.repository.CouponRepository
 import io.paperdb.Paper
-import kotlinx.android.synthetic.main.hub_fragment.*
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

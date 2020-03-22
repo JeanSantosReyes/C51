@@ -13,13 +13,13 @@ class CouponRepositoryTest {
 
     @Test
     fun checkRepositoryInit() {
-        var couponRepository = CouponRepository.couponrepository
+        var couponRepository = CouponRepository.coupon
         Assert.assertNotNull(couponRepository)
     }
 
     @Test
-    fun checRepositoryApiTest() {
-        var couponRepository = CouponRepository.couponrepository
+    fun checkRepositoryApiTest() {
+        var couponRepository = CouponRepository.coupon
         Assert.assertNotNull(couponRepository.api)
         GlobalScope.launch {
             var api = couponRepository.api.getCoupon().offers
