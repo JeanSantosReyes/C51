@@ -21,6 +21,7 @@ Coupon is a simple two page application that would read the latest cash back off
 
 - Share your digital cash back offers with your friends
 - The coupon application can work offline as well.
+- The application will allow you to sort the offer based on the name and cash back
 
 ## Technology stack
 
