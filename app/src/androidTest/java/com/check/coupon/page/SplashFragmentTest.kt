@@ -33,7 +33,7 @@ class SplashFragmentTest {
     }
 
     @Test
-    fun TestSplashScreen() {
+    fun testSplashScreen() {
         val splashPage = launchFragmentInContainer<SplashFragment>()
         splashPage.recreate()
         GlobalScope.launch {

@@ -1,23 +1,17 @@
 package com.check.coupon.page
 
 import android.content.Intent
-import android.graphics.Color
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-
 import com.check.coupon.R
-import com.check.coupon.repository.CouponRepository
 import com.check.coupon.viewmodel.OfferViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.offer_fragment.*
-import kotlinx.android.synthetic.main.offerview_item.*
 
 class OfferFragment : Fragment() {
 

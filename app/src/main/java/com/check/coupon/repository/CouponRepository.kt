@@ -25,10 +25,6 @@ class CouponRepository private constructor() {
         }
     }
 
-
-
-
-
     init {
         DaggerNetworkComponent.builder().build().inject(this)
     }
@@ -61,5 +57,4 @@ class CouponRepository private constructor() {
         // return the data from the internet
         return offerList
     }
-
 }

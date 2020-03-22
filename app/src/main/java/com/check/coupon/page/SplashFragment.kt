@@ -29,7 +29,7 @@ class SplashFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(SplashViewModel::class.java)
 
-        // Trigger the initalize function on the repository
+        // Trigger the Initalize function on the repository
         LoginTextButton.setOnClickListener{
             viewModel.initializeRepository()
             loginProgressBar.visibility = View.VISIBLE

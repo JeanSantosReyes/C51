@@ -16,12 +16,9 @@ class HubViewModel : ViewModel() {
         offerList.value = CouponRepository.coupon.getOffers()
     }
 
-
-
     fun isNetworkAvailable(context: Context): Boolean {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         return connectivityManager.activeNetworkInfo != null && connectivityManager.activeNetworkInfo.isConnected
     }
-
 }

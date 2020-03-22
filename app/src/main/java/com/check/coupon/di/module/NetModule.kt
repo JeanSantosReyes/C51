@@ -10,20 +10,26 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+/***
+ *
+ *   Network module class for the dependency injection
+ *
+ */
+
 @Module
 class NetModule {
 
     @Singleton
     @Provides
     fun provideRetrofit(): CouponApi {
-        val Gson = GsonBuilder()
+        val responseBuilder = GsonBuilder()
             .setLenient()
             .create()
 
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
-            .addConverterFactory(GsonConverterFactory.create(Gson))
+            .addConverterFactory(GsonConverterFactory.create(responseBuilder))
             .build()
             .create(CouponApi::class.java)
     }

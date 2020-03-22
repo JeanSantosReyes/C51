@@ -13,14 +13,12 @@ import androidx.navigation.Navigation
 import com.check.coupon.R
 import com.check.coupon.adapter.OfferViewAdapter
 import com.check.coupon.model.Offer
-import com.check.coupon.repository.CouponRepository
 import com.check.coupon.viewmodel.HubViewModel
 import kotlinx.android.synthetic.main.hub_fragment.*
 import kotlinx.android.synthetic.main.offerview_item.view.*
 
 
 class HubFragment : Fragment() {
-
 
     companion object {
         fun newInstance() = HubFragment()

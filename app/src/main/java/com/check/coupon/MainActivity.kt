@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         return navHost.navController.navigateUp() || super.onSupportNavigateUp()
     }
 
+    // disable back navigation
     override fun onBackPressed() {
         val navigationController = navHost.findNavController()
         if ((navigationController.currentDestination?.id == R.id.offerFragment)) {
