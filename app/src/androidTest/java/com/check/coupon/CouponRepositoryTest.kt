@@ -42,7 +42,7 @@ class CouponRepositoryTest {
         GlobalScope.launch {
             couponRepository.initialize()
         }
-        assertTrue(couponRepository.getOffers().size>0)
+        assertTrue(couponRepository.getOffers().size > 0)
     }
 
     @Test

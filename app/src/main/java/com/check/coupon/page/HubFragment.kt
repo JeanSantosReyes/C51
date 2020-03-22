@@ -1,7 +1,6 @@
 package com.check.coupon.page
 
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +24,7 @@ class HubFragment : Fragment() {
     companion object {
         fun newInstance() = HubFragment()
     }
+
     private lateinit var viewModel: HubViewModel
     private lateinit var offers: ArrayList<Offer>
 
@@ -54,10 +54,10 @@ class HubFragment : Fragment() {
                 object :
                     OfferViewAdapter.ClickListener {
                     override fun onClick(view: View, position: Int) {
-                       // var offerList = viewModel.getOfferList() as ArrayList<Offer>
+                        // var offerList = viewModel.getOfferList() as ArrayList<Offer>
                         val bundle = bundleOf("offer_id" to view.offerId.text.toString())
-                       Navigation.findNavController(requireView()).
-                            navigate(R.id.action_hubFragment_to_offerFragment,bundle)
+                        Navigation.findNavController(requireView())
+                            .navigate(R.id.action_hubFragment_to_offerFragment, bundle)
                     }
                 }
             )
@@ -67,7 +67,7 @@ class HubFragment : Fragment() {
             it.forEach { it ->
                 offers.add(it)
             }
-            if(it.isNotEmpty()) {
+            if (it.isNotEmpty()) {
                 offerItemList.adapter?.notifyDataSetChanged()
             } else {
                 offerItemList.visibility = View.GONE
@@ -75,23 +75,32 @@ class HubFragment : Fragment() {
             }
         })
         // check the internet or data of the device and provide a toast warning message to the user
-        if(!viewModel.isNetworkAvailable(requireContext())) {
-            Toast.makeText(requireContext(),"Internet not available,Loading from Cache",Toast.LENGTH_LONG).show()
+        if (!viewModel.isNetworkAvailable(requireContext())) {
+            Toast.makeText(
+                requireContext(),
+                "Internet not available,Loading from Cache",
+                Toast.LENGTH_LONG
+            ).show()
         }
 
-        sortButton.setOnClickListener{
+        sortButton.setOnClickListener {
             //Toast.makeText(context,"sort",Toast.LENGTH_LONG).show()
             val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
             builder.setTitle("Choose your sort preference")
             val sortTypes =
-                arrayOf("Sort by Name", "Sort by Cash back $ (LOW to HIGH)","Sort by Cash back $ (HIGH to LOW)")
-            builder.setItems(sortTypes
+                arrayOf(
+                    "Sort by Name",
+                    "Sort by Cash back $ (LOW to HIGH)",
+                    "Sort by Cash back $ (HIGH to LOW)"
+                )
+            builder.setItems(
+                sortTypes
             ) { _, which ->
                 when (which) {
                     0 -> {
-                      offers.sortBy {
-                          it.name
-                      }
+                        offers.sortBy {
+                            it.name
+                        }
                     }
                     1 -> {
                         offers.sortBy {
