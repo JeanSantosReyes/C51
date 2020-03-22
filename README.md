@@ -18,6 +18,9 @@
 
 Coupon is a simple two page application that would read the latest cash back offers from the server.
 
+- Share your digital cash back offers with your friends
+- The coupon application can work offline as well.
+
 ## Technology stack
 
 Technology stack used in Coupon
